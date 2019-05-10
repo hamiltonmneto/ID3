@@ -1,0 +1,14 @@
+C:\Users\Hamilton\Source\Repos\ID3\ID3\bin\Debug\netcoreapp2.1\ID3.deps.json
+C:\Users\Hamilton\Source\Repos\ID3\ID3\bin\Debug\netcoreapp2.1\ID3.runtimeconfig.json
+C:\Users\Hamilton\Source\Repos\ID3\ID3\bin\Debug\netcoreapp2.1\ID3.runtimeconfig.dev.json
+C:\Users\Hamilton\Source\Repos\ID3\ID3\bin\Debug\netcoreapp2.1\ID3.dll
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.csproj.CoreCompileInputs.cache
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.RazorAssemblyInfo.cache
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.RazorAssemblyInfo.cs
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.AssemblyInfoInputs.cache
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.AssemblyInfo.cs
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.RazorTargetAssemblyInfo.cache
+C:\Users\Hamilton\Source\Repos\ID3\ID3\bin\Debug\netcoreapp2.1\ID3.pdb
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.csprojAssemblyReference.cache
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.dll
+C:\Users\Hamilton\Source\Repos\ID3\ID3\obj\Debug\netcoreapp2.1\ID3.pdb
