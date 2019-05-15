@@ -17,11 +17,12 @@ namespace ID3.Controllers
     {
         [HttpPost]
         [Route("processar")]
-        public void ProcessarDados([FromBody]IList<DadosInputModel> dados)
+        public void ProcessarDados([FromBody]List<DadosInputModel> Dados)
         {
-            var propriedades = new Extensoes().GerarPropriedades(dados);
-            new Processar().InduzirArvore(dados, propriedades);
-            Ok();
+            var classe = "Risco";
+            var Propriedades = new Extensoes().GerarPropriedades(Dados, classe);
+            var Arvore = new Processar().InduzirArvore(Dados, Propriedades, classe);
+            Ok(Arvore);
         }
 
     }
