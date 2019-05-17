@@ -33,5 +33,20 @@ namespace ID3.Service
             }
             return valores.Distinct().ToList();
         }
+
+        public List<DadosInputModel> GetValoresParticao(string ValorDaPropriedade, List<DadosInputModel> dados)
+        {
+            var ValoresParticao = new List<DadosInputModel>();
+            var props = dados.First().GetType().GetProperties();
+
+            foreach (var d in props)
+            {
+                var ValoresDaLista = dados.Where(x => d.GetValue(x).Equals(ValorDaPropriedade)).ToList();
+                if (ValoresDaLista.Any())
+                    ValoresParticao = ValoresDaLista;
+            }
+
+            return ValoresParticao;
+        }
     }
 }

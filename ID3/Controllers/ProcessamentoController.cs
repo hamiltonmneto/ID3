@@ -21,7 +21,7 @@ namespace ID3.Controllers
         {
             var classe = "Risco";
             var Propriedades = new Extensoes().GerarPropriedades(Dados, classe);
-            var Arvore = new Processar().InduzirArvore(Dados, Propriedades, classe);
+            var Arvore = new Processar().InduzirArvore( Dados, Propriedades, classe);
             Ok(Arvore);
         }
 
