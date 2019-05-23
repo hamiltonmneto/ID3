@@ -9,6 +9,7 @@ namespace ID3.Service
     public class Processar
     {
         public No ArvoreDeDecisao = new No();
+        public Arvore<No> arvore = new Arvore<No>();
         public No InduzirArvore( List<DadosInputModel> dados,  IList<string> propriedades, string Classe)
         {
             if (dados.Select(x => x.Risco).Distinct().Count() == 1)
@@ -17,20 +18,25 @@ namespace ID3.Service
                 return new No {Classe = string.Join(" OU ", dados.Select(x => x.Risco).Distinct()) };
             var PropriedadeSelecionada = SelecionarPropriedadeERemoverDaListaDePropriedades(propriedades);
 
-            if (string.IsNullOrEmpty(ArvoreDeDecisao.Propriedade))
+            if (arvore.Root == null)
             {
-                ArvoreDeDecisao.Propriedade = PropriedadeSelecionada;
-                ArvoreDeDecisao.Filhos = new List<No> { };
+                arvore.Root = new TreeNode<No>() { Data = new No {Propriedade = PropriedadeSelecionada} };
             }
             var ValoresDaPropriedade = new Extensoes().GetValoresPropriedades(dados, PropriedadeSelecionada);
 
-            for (int i = 0; i < ValoresDaPropriedade.Count(); i++)
-            {                    
-                var ramo = new No { Rotulo = ValoresDaPropriedade[i], Filhos = new List<No> { } };
-                ArvoreDeDecisao.Filhos.Add(ramo);
-                var particao = CriarNovaParticao(ValoresDaPropriedade[i],dados);
-                var filho = InduzirArvore( particao,  propriedades, Classe);
-            }
+            if (arvore.Root.Children == null)
+                for (int i = 0; i < ValoresDaPropriedade.Count(); i++)
+                {
+                    arvore.Root.Children.Add(new TreeNode<No>() { Data = new No { Rotulo = ValoresDaPropriedade[i] }, Parent = arvore.Root });
+                }
+
+
+                var particao = CriarNovaParticao(ValoresDaPropriedade[i], dados);
+                var classe = InduzirArvore(particao, propriedades, Classe);
+                //var ramo = new No { Rotulo = ValoresDaPropriedade[i], Filhos = new List<No> { } };
+                //ArvoreDeDecisao.Filhos.Add(ramo);
+                //var particao = CriarNovaParticao(ValoresDaPropriedade[i],dados);
+                //var filho = InduzirArvore( particao,  propriedades, Classe);
 
             return ArvoreDeDecisao;
         }

@@ -10,6 +10,5 @@ namespace ID3.Models
         public string Propriedade { get; set; }
         public string Rotulo { get; set; }
         public string Classe { get; set; }
-        public List<No> Filhos { get; set; }
     }
 }
